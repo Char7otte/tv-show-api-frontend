@@ -4,3 +4,9 @@
 #dad-joke {
     visibility: hidden;
 }
+
+img {
+    background-image: url(../img/img-placeholder.svg);
+    background-position: center;
+    background-size: contain;
+}
