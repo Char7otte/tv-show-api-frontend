@@ -1,17 +1,15 @@
+import { callAPI } from "./modules/api.js";
+
 async function getDadJoke() {
+    const url = "https://icanhazdadjoke.com";
     const config = {
         headers: {
             Accept: "application/json",
             "User-Agent": "For learning APIs (https://github.com/Char7otte/tv-show-api-frontend)",
         },
     };
-    try {
-        const res = await axios.get("https://icanhazdadjoke.com", config);
-        return res.data.joke;
-    } catch (e) {
-        console.error("Error getting dad joke.", e);
-        return null;
-    }
+
+    return await callAPI(url, "dad joke", config);
 }
 function setDadJoke(joke) {
     const jokeText = document.querySelector("#dad-joke");
@@ -21,8 +19,8 @@ function setDadJoke(joke) {
 
 async function dadJoke() {
     const joke = await getDadJoke();
-    if (!joke) return;
+    if (!joke.joke) return;
 
-    setDadJoke(joke);
+    setDadJoke(joke.joke);
 }
 dadJoke();
