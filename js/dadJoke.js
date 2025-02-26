@@ -15,6 +15,7 @@ async function getDadJoke() {
 }
 function setDadJoke(joke) {
     const jokeText = document.querySelector("#dad-joke");
+    jokeText.style.visibility = "visible";
     jokeText.innerText = joke;
 }
 
