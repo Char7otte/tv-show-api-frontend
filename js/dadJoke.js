@@ -2,7 +2,7 @@ async function getDadJoke() {
     const config = {
         headers: {
             Accept: "application/json",
-            "User-Agent": "For learning APIs",
+            "User-Agent": "For learning APIs (https://github.com/Char7otte/tv-show-api-frontend)",
         },
     };
     try {
