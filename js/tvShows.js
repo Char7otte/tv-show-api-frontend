@@ -35,9 +35,11 @@ function createCard(info) {
         // so nothing needs to be done here if there is no poster image found.
     }
 
-    //Create the title display
-    const header = createElement("header", card, ["card-header"]);
-    const title = createElement("p", header, ["card-header-title"]);
+    //Create the main content.
+    const content = createElement("div", card, ["card-content"]);
+
+    //Create the title.
+    const title = createElement("p", content, ["title", "is-4"]);
     title.innerText = showName;
 }
 
