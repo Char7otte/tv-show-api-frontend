@@ -9,6 +9,8 @@ async function getShows(input) {
 }
 
 function createCard(info) {
+    const showName = info.show.name;
+
     const cell = createElement("div", showsContainer, ["cell"]);
 
     //Make the card a link to the show url.
@@ -35,7 +37,7 @@ function createCard(info) {
     //Create the title display
     const header = createElement("header", card, ["card-header"]);
     const title = createElement("p", header, ["card-header-title"]);
-    title.innerText = info.show.name;
+    title.innerText = showName;
 }
 
 async function shows(input) {
