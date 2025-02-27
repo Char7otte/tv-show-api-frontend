@@ -41,6 +41,10 @@ function createCard(info) {
     //Create the title.
     const title = createElement("p", content, ["title", "is-4"]);
     title.innerText = showName;
+
+    //Create the rating.
+    const rating = createElement("p", content, ["subtitle", "is-6"]);
+    rating.innerText = info.show.rating.average ? info.show.rating.average : "not enough ratings";
 }
 
 async function shows(input) {
