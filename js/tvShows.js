@@ -26,6 +26,7 @@ function createCard(info) {
     const imgContainer = createElement("div", card, ["card-image"]);
     const figure = createElement("figure", imgContainer, ["image", "is-2by3"]);
     const img = createElement("img", figure);
+    img.alt = showName + " poster";
     try {
         const imgSrc = info.show.image.original;
         img.src = imgSrc;
