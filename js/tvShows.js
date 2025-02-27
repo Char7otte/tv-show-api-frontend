@@ -42,6 +42,9 @@ function createCard(info) {
 }
 
 async function shows(input) {
+    //Delete previously searched content
+    showsContainer.innerHTML = "";
+
     const showArray = await getShows(input);
     console.log(showArray);
 
