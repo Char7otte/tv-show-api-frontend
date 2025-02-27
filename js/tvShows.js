@@ -20,7 +20,7 @@ function createCard(info) {
     //Create the card container.
     const card = createElement("div", anchor, ["card"]);
 
-    // Create the poster img
+    // Create the poster img.
     const imgContainer = createElement("div", card, ["card-image"]);
     const figure = createElement("figure", imgContainer, ["image", "is-2by3"]);
     const img = createElement("img", figure);
