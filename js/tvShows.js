@@ -11,9 +11,14 @@ async function getShows(input) {
 function createCard(info) {
     const cell = createElement("div", showsContainer, ["cell"]);
 
-    //Create the card container
-    const card = createElement("a", cell, ["card"]);
-    card.href = info.show.url;
+    //Make the card a link to the show url.
+    //Cannot make the following card div an anchor element
+    //because then Bulma's card shadow css doesn't work.
+    const anchor = createElement("a", cell);
+    anchor.href = info.show.url;
+
+    //Create the card container.
+    const card = createElement("div", anchor, ["card"]);
 
     // Create the poster img
     const imgContainer = createElement("div", card, ["card-image"]);
