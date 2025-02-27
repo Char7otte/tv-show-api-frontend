@@ -8,6 +8,21 @@ async function getShows(input) {
     return await callAPI(url, "tv shows");
 }
 
+function sortShows(array) {
+    return array.sort((a, b) => {
+        const aRating = a.show.rating.average;
+        const bRating = b.show.rating.average;
+
+        if (aRating < bRating) {
+            return 1;
+        } else if (aRating > bRating) {
+            return -1;
+        } else {
+            return 0;
+        }
+    });
+}
+
 function createCard(info) {
     const showName = info.show.name;
 
@@ -51,8 +66,7 @@ async function shows(input) {
     //Delete previously searched content
     showsContainer.innerHTML = "";
 
-    const showArray = await getShows(input);
-    console.log(showArray);
+    const showArray = sortShows(await getShows(input));
 
     if (!showArray) {
         console.error("Error reading input.");
